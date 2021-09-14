@@ -68,6 +68,21 @@ form button{
     margin-top: 16px;
 }
 
+form p{
+    font-size: 14px;
+    color: #737380;
+    margin-top: 16px;
+}
+form a {
+    color: #e559f9;
+}
+
+h2{
+    font-size: 24px;
+    margin: 64px 0 24px;
+    font-family: 'Poppins', sans-serif;
+}
+
 .create-room{
     margin-top: 64px;
     height: 50px;
