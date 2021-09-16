@@ -31,7 +31,7 @@ aside p {
     color: #f8f8f8;
 }
 
-main{
+#room-main{
     flex: 8;
 
     padding: 0 32px;
@@ -52,11 +52,11 @@ main{
     align-items: center;
 }
 
-form button, input {
+#form-auth button, input {
     width: 100%;
 }
 
-form input {
+#form-auth input {
     height: 50px;
     border-radius: 8px;
     padding: 0 16px;
@@ -64,16 +64,16 @@ form input {
     border: 1px solid #a8a8b3;
 }
 
-form button{
+#form-auth button{
     margin-top: 16px;
 }
 
-form p{
+#form-auth p{
     font-size: 14px;
     color: #737380;
     margin-top: 16px;
 }
-form a {
+#form-auth a {
     color: #e559f9;
 }
 
