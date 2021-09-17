@@ -9,6 +9,14 @@ header{
     justify-content: space-between;
     align-items: center;
 }
+.content div{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.content button{
+    height: 40px;
+}
 .content img{
     max-height: 45px;
 }
@@ -84,4 +92,7 @@ form textarea{
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
+}
+.question-list{
+    margin-top: 32px;
 }

@@ -1,0 +1,32 @@
+.question{
+    background-color: #fefefe;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    padding: 24px;
+}
+.question + .question{
+    margin-top: 8px;
+}
+.question p {
+    color: #29292e;
+}
+.question footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+}
+.user-info{
+    display: flex;
+    align-items: center;
+}
+.user-info img{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
+.user-info span{
+    margin-left: 8px;
+    color: #737380;
+    font-size: 14px;
+}
