@@ -14,12 +14,12 @@ import '../styles/auth.css';
 
 export function Home(){
     const history = useHistory();
-    const { user, signInWithGooogle } = useAuth();
+    const { user, signInWithGoogle } = useAuth();
     const [roomCode, setRoomCode] =  useState('');
 
     async function handleCreateRoom(){
         if(!user){
-          await signInWithGooogle();
+          await signInWithGoogle();
         }
 
         history.push('/rooms/new');
@@ -36,6 +36,11 @@ export function Home(){
 
         if (!roomRef.exists()){
             alert('Room does not exists');
+            return;
+        }
+
+        if(roomRef.val().endedAt){
+            alert('Room already closed');
             return;
         }
 

@@ -30,3 +30,26 @@
     color: #737380;
     font-size: 14px;
 }
+footer button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.like-button{
+    display: flex;
+    align-items: flex-end;
+    color: #737380;
+    gap: 8px;
+    transition: filter 0.2;
+}
+.liked{
+    color: #835afd;
+}
+.liked svg path {
+    stroke: #835afd;
+}
+
+.like-button:hover{
+    filter: brightness(0.7);
+}
