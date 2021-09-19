@@ -7,6 +7,18 @@
 .question + .question{
     margin-top: 8px;
 }
+
+.highlighted{
+    background: #F4F0FF;
+    border: 1px solid #835afd;
+}
+.highlighted footer .user-info span{
+    color: #29292e;
+}
+.answered{
+    background: #DBDCDD;
+}
+
 .question p {
     color: #29292e;
 }
@@ -16,16 +28,20 @@
     align-items: center;
     margin-top: 24px;
 }
-.user-info{
+.question .user-info{
     display: flex;
     align-items: center;
 }
-.user-info img{
+footer div {
+    display: flex;
+    gap: 16px;
+}
+.question .user-info img{
     width: 42px;
     height: 42px;
     border-radius: 50%;
 }
-.user-info span{
+.question .user-info span{
     margin-left: 8px;
     color: #737380;
     font-size: 14px;
