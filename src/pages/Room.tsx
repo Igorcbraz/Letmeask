@@ -1,9 +1,10 @@
 import { FormEvent, useState } from 'react';
 import { useParams } from 'react-router';
 
-import logoImg from '../assets/images/logo.svg';
+import emptyQuestions from '../assets/images/empty-questions.svg';
 
 import { Button } from '../components/Button';
+import { Logo } from '../components/Logo';
 import { Question } from '../components/Question';
 
 import { RoomCode } from '../components/RoomCode';
@@ -66,7 +67,7 @@ export function Room() {
         <div id="page-root">
             <header>
                 <div className="content">
-                    <img src={logoImg} alt="Letmeask"/>
+                    <Logo width="157" height="75"/>
                     <RoomCode code={roomId} />
                 </div>
             </header>
@@ -99,6 +100,16 @@ export function Room() {
                 </form>
                 
                 <div className="question-list">
+                    { questions.length < 0 && (
+                        <footer className="emptyQuestions">
+                            <img src={emptyQuestions} alt="Ilustração para sala sem perguntas" />
+                            <div>
+                                <h2>Nenhuma pergunta por aqui...</h2>
+                                <p>Faça o seu login e seja a primeira pessoa a fazer uma pergunta!</p>
+                            </div>
+                        </footer>
+                    )}
+                    
                     {questions.map(question => {
                         return(
                             <Question
@@ -122,12 +133,12 @@ export function Room() {
                                     </button>  
                                 )}  
                             </Question>
-                            
-                            
                         );
                     })}
                 </div>
             </main>
+
+            
         </div>
     );
 }

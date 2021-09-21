@@ -2,13 +2,15 @@ import { Link, useHistory } from 'react-router-dom';
 import { FormEvent, useState } from 'react';
 
 import illustrationImg from '../assets/images/illustration.svg';
-import logoImg from '../assets/images/logo.svg';
+
+import { database } from '../services/firebase';
 
 import { Button } from '../components/Button';
+import { Logo } from '../components/Logo';
 import { useAuth } from '../hooks/useAuth';
 
 import '../styles/auth.css';
-import { database } from '../services/firebase';
+
 
 export function NewRoom(){
     const { user } = useAuth();
@@ -42,7 +44,7 @@ export function NewRoom(){
 
             <main id="room-main">
                 <div className="main-content">
-                    <img src={logoImg} alt="Letmeask" />
+                    <Logo width="357" height="155"/>
                     <h2>Criar uma nova sala</h2>
                     <form id="form-auth" onSubmit={handleCreateRoom}>
                         <input

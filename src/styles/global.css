@@ -1,3 +1,45 @@
+:root{
+    /* Light theme */
+    /* --background   : #F4F0FF;
+
+    --black        : #29292E;
+    --shadow       : rgba(0, 0, 0, 0.04);
+ 
+    --details      : #FEFEFE;
+    --details2     : #f8f8f8;
+    --white        : #FFF;
+
+    --light-grey   : #DBDCDD;
+    --medium-grey  : #A8A8B3;
+    --dark-grey    : #737380;
+    --border       : #e2e2e2;
+ 
+    --purple       : #835AFD;
+
+    --pink-dark    : #E559F9; #1f1d1d*/
+
+    /* Dark theme */
+    --background   : #121212;
+    --background2  : #202124;
+
+    --black        : #29292E;
+    --shadow       : rgba(0, 0, 0, 0.04);
+    --input-bg    : #434649;
+ 
+    --details      : #272626;
+    --details2     : #f8f8f8;
+    --white        : #FFF;
+
+    --light-grey   : #7e7e7e;
+    --medium-grey  : #A8A8B3;
+    --dark-grey    : #cccccf;
+    --border       : #424347;
+ 
+    --purple       : #4c319e;
+
+    --pink-dark    : #a075d4;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -5,8 +47,8 @@
 }
 
 body{
-    background-color: #f8f8f8;
-    color: #29292e;
+    background-color: var(--background2);
+    color: var(--details2);
 }
 
 body, input, button, textarea{

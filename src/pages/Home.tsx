@@ -2,12 +2,12 @@ import { useHistory } from 'react-router-dom';
 import { FormEvent, useState } from 'react';
   
 import illustrationImg from '../assets/images/illustration.svg';
-import logoImg from '../assets/images/logo.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
 
 import { database } from '../services/firebase';
 
 import { Button } from '../components/Button';
+import { Logo } from '../components/Logo';
 import { useAuth } from '../hooks/useAuth';
 
 import '../styles/auth.css';
@@ -57,7 +57,7 @@ export function Home(){
            
             <main id="room-main">
                 <div className="main-content">
-                    <img src={logoImg} alt="Letmeask" />
+                    <Logo width="357" height="155"/>
                     <button onClick={handleCreateRoom} className="create-room">
                         <img src={googleIconImg} alt="Logo do Google" />
                         Crie sua sala com o Google
