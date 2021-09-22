@@ -4,7 +4,7 @@
     overflow: hidden;
 
     background: var(--white);
-    border: 1px solid var(--purple );
+    border: 1px solid var(--purple);
     cursor: pointer;
 
     display: flex;
@@ -15,7 +15,7 @@
     align-items: center;
 }
 .room-code div img{
-    background: var(--purple );
+    background: var(--purple);
     height: 41px;
     padding: 7px 13px;
     float: left;

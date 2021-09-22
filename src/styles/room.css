@@ -92,9 +92,10 @@ form textarea{
 }
 
 .question-list{margin-top: 32px;}
-.question-list #svgAnswer path:hover, circle:hover{stroke: var(--purple)}
-.question-list #svgHighlight path:hover {stroke: var(--purple)}
-.question-list #svgDelete path:hover{stroke: #D73754}
+.question-list path:hover{
+    stroke: var(--purple)
+}
+
 
 .emptyQuestions{
     display: flex;

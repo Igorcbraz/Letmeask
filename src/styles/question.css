@@ -9,8 +9,8 @@
 }
 
 .highlighted{
-    background: var(--background);
-    border: 1px solid var(--purple);
+    background: var(--highlighted);
+    border: 2px solid var(--purple);
 }
 .highlighted footer .user-info span{
     color: var(--black);
@@ -55,15 +55,15 @@ footer button {
 .like-button{
     display: flex;
     align-items: flex-end;
-    color: var(--dark-grey);
+    color: var(--like);
     gap: 8px;
     transition: filter 0.2;
 }
 .liked{
-    color: var(--purple);
+    color: var(--like);
 }
 .liked svg path {
-    stroke: var(--purple);
+    stroke: var(--like);
 }
 
 .like-button:hover{

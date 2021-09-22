@@ -49,7 +49,7 @@ aside p {
     text-align: center;
 }
 .pathLogo{
-    fill: var(--details2);
+    fill: var(--logo);
 }
 #form-auth button, input {
     width: 100%;

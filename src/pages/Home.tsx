@@ -8,6 +8,7 @@ import { database } from '../services/firebase';
 
 import { Button } from '../components/Button';
 import { Logo } from '../components/Logo';
+import { ToggleTheme } from '../components/ToggleTheme';
 import { useAuth } from '../hooks/useAuth';
 
 import '../styles/auth.css';
@@ -49,14 +50,19 @@ export function Home(){
 
     return(
         <div id="page-auth">
+            
             <aside>
                 <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
                 <strong>Crie salas de Q&amp;A ao-vivo</strong>
                 <p>Tire as dúvidas da sua audiência em tempo-real</p>
-            </aside>
-           
-            <main id="room-main">
+            </aside>          
+
+            <main id="room-main">               
+
                 <div className="main-content">
+                    <div className="DarkModeToggle">
+                        <ToggleTheme/>
+                    </div>
                     <Logo width="357" height="155"/>
                     <button onClick={handleCreateRoom} className="create-room">
                         <img src={googleIconImg} alt="Logo do Google" />
