@@ -5,13 +5,14 @@ import '../styles/toggle.css';
 
 export function ToggleTheme(){
     const [isDarkMode, setIsDarkMode] = useState(false);
+
     // Get the root element
     let root = document.documentElement.style
-
     // Checking the user themes preference
     const darkThemeMq  = window.matchMedia("(prefers-color-scheme: dark)");
+    console.log(document.documentElement.style.getPropertyValue("--background"));
 
-    if(isDarkMode){
+    if(isDarkMode || darkThemeMq){
         root.setProperty('--background'  , '#202124');
         root.setProperty(' --input-bg'   , '#434649');
         root.setProperty('--details'     , '#272626');
@@ -24,7 +25,7 @@ export function ToggleTheme(){
         root.setProperty(' --logo'       , '#f8f8f8');
         root.setProperty('--purple'      , '#4c319e');
         root.setProperty('--pink-dark'   , '#a075d4');
-    } else {
+    } else if(!isDarkMode || !darkThemeMq){
         root.setProperty('--background'  , '#F4F0FF');
         root.setProperty(' --input-bg'   , '#FFF');
         root.setProperty('--details'     , '#FEFEFE');
@@ -46,7 +47,6 @@ export function ToggleTheme(){
             size={70}
             speed={1.1}
         />
-        
         </div>
     );
 }
