@@ -7,6 +7,7 @@ import { database } from '../services/firebase';
 
 import { Button } from '../components/Button';
 import { Logo } from '../components/Logo';
+import { ToggleTheme } from '../components/ToggleTheme';
 import { useAuth } from '../hooks/useAuth';
 
 import '../styles/auth.css';
@@ -43,9 +44,15 @@ export function NewRoom(){
             </aside>
 
             <main id="room-main">
+
                 <div className="main-content">
+                    <div className="DarkModeToggle">
+                       <ToggleTheme/>
+                    </div>
+
                     <Logo width="357" height="155"/>
                     <h2>Criar uma nova sala</h2>
+
                     <form id="form-auth" onSubmit={handleCreateRoom}>
                         <input
                             type="text"
@@ -61,6 +68,7 @@ export function NewRoom(){
                         </p>
                     </form>
                 </div>
+
             </main>
 
         </div>

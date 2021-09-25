@@ -61,8 +61,9 @@ export function Home(){
 
                 <div className="main-content">
                     <div className="DarkModeToggle">
-                        <ToggleTheme/>
+                       <ToggleTheme/>
                     </div>
+    
                     <Logo width="357" height="155"/>
                     <button onClick={handleCreateRoom} className="create-room">
                         <img src={googleIconImg} alt="Logo do Google" />

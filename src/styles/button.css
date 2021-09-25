@@ -22,7 +22,7 @@
     background: var(--white);
     border: 1px solid var(--purple);
     color: var(--purple);
-    transition: 0.5s;
+    transition: 0.3s;
 }
 .outlined:hover{
     background: var(--purple);

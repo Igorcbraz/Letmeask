@@ -2,6 +2,7 @@ import { useHistory, useParams } from 'react-router';
 
 import { Button } from '../components/Button';
 import { Logo } from '../components/Logo';
+import { ToggleTheme } from '../components/ToggleTheme';
 import { Question } from '../components/Question';
 
 import { RoomCode } from '../components/RoomCode';
@@ -60,6 +61,7 @@ export function AdminRoom() {
                     <Button isOutlined
                         onClick={handleDeleteRoom}
                     >Encerrar Sala</Button>
+                    <ToggleTheme/>
                     </div>
                 </div>
             </header>

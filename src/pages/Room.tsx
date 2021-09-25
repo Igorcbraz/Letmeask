@@ -5,6 +5,7 @@ import emptyQuestions from '../assets/images/empty-questions.svg';
 
 import { Button } from '../components/Button';
 import { Logo } from '../components/Logo';
+import { ToggleTheme } from '../components/ToggleTheme';
 import { Question } from '../components/Question';
 
 import { RoomCode } from '../components/RoomCode';
@@ -68,7 +69,10 @@ export function Room() {
             <header>
                 <div className="content">
                     <Logo width="157" height="75"/>
-                    <RoomCode code={roomId} />
+                    <div>
+                        <RoomCode code={roomId}/>
+                        <ToggleTheme/>
+                    </div>
                 </div>
             </header>
 

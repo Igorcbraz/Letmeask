@@ -30,6 +30,7 @@ main {
 .room-title h1{
     font-family: 'Poppins', sans-serif;
     font-size: 24px;
+    color: var(--logo);
     text-align: left;
 }
 .room-title span{
@@ -48,7 +49,7 @@ form textarea{
     padding: 16px;
     border-radius: 8px;
     background: var(--details);
-    color: var(--details2);
+    color: var(--logo);
     box-shadow: 0 2px 12px var(--shadow);
     resize: vertical;
     min-height: 130px;
@@ -72,7 +73,7 @@ form textarea{
 .user-info span{
     margin-left: 8px;
     font-weight: 500;
-    color: var(--details2) !important;
+    color: var(--logo) !important;
     font-size: 14px;
 }
 .form-footer span {
