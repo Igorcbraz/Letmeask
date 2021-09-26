@@ -4,6 +4,9 @@ import { FormEvent, useState } from 'react';
 import illustrationImg from '../assets/images/illustration.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { database } from '../services/firebase';
 
 import { Button } from '../components/Button';
@@ -22,7 +25,7 @@ export function Home(){
         if(!user){
           await signInWithGoogle();
         }
-
+        
         history.push('rooms/new');
     }
 
@@ -36,12 +39,30 @@ export function Home(){
         const roomRef = await database.ref(`rooms/${roomCode}`).get();
 
         if (!roomRef.exists()){
-            alert('Room does not exists');
+            toast.error('Room does not exists', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+            });
             return;
         }
 
         if(roomRef.val().endedAt){
-            alert('Room already closed');
+            toast.error('Room already closed', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+            });
             return;
         }
 
@@ -50,7 +71,18 @@ export function Home(){
 
     return(
         <div id="page-auth">
-            
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
+
             <aside>
                 <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
                 <strong>Crie salas de Q&amp;A ao-vivo</strong>

@@ -1,0 +1,21 @@
+.all-stats{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    box-shadow: 0 2px 12px var(--shadow);
+}
+.room-stats{
+    border: 2px solid;
+    border-radius: 15px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.room-stats h3{
+    padding: 15px;
+    
+}

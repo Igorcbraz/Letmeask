@@ -51,7 +51,7 @@ export function useRoom(roomId: string){
                     likeCount: Object.values(value.likes ?? {}).length,
                     likeId: Object.entries(value.likes ?? {}).find(([key, like]) => like.authorId === user?.id)?.[0],
                 }});
-
+                
             setTitle(databaseRoom.title)
             setQuestions(parsedQuestions);
         })

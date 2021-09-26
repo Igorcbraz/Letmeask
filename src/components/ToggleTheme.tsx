@@ -1,6 +1,9 @@
 import {useState} from "react";
 import Switch from "react-switch";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import '../styles/toggle.css';
 import 'material-design-icons/iconfont/material-icons.css';
 
@@ -19,6 +22,17 @@ export function ToggleTheme(){
 
     const changeTheme = () => {
         setDarkMode(darkMode === 'light' ? 'dark' : 'light')
+
+        toast.success('Tema alterado com sucesso', {
+            position: "top-left",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored',
+        });
     }
 
     const root = document.documentElement.style
@@ -59,31 +73,27 @@ export function ToggleTheme(){
     }
 
     return(
-        <button className="toggleTheme" onClick={changeTheme}>
-            <span 
-                className="material-icons svgTheme"
-            >
-                {darkMode === 'light' ? 
-                <span>&#xe518;</span> : 
-                <span>&#xf03d;</span>}
-            </span>
-        </button>
-        // <Switch
-        //     onChange={changeTheme}
-        //     checked={darkMode === 'dark'}
-        //     checkedIcon={!darkMode}
-        //     uncheckedIcon={!darkMode}
-        //     handleDiameter={30}
-        //     offHandleColor="#E559F9"
-        //     onHandleColor="#2F2450"
-        //     offColor={darkMode ? '#F4F0FF' : '#202124'}
-        //     onColor={darkMode ? '#202124' : '#F4F0FF'}
-        //     uncheckedHandleIcon={
-        //         <span className="material-icons svgTheme">&#xe518;</span>
-        //     }            
-        //     checkedHandleIcon={
-        //         <span className="material-icons svgTheme">&#xf03d;</span>
-        //     }
-        // />
+        <>
+            <ToastContainer
+                position="top-left"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
+            <button className="toggleTheme" onClick={changeTheme}>
+                <span 
+                    className="material-icons svgTheme"
+                >
+                    {darkMode === 'light' ? 
+                    <span>&#xe518;</span> : 
+                    <span>&#xf03d;</span>}
+                </span>
+            </button>
+        </>
     );
 }

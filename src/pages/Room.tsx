@@ -81,7 +81,7 @@ export function Room() {
                     <h1>Sala {title}</h1>
                     { questions.length > 0 && <span>{questions.length} pergunta(s)</span> }
                 </div>
-
+                
                 <form onSubmit={handleSendQuestion}>
                     <textarea 
                         placeholder="O que você quer perguntar?"

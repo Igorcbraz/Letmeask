@@ -1,9 +1,12 @@
 import { Link, useHistory } from 'react-router-dom';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 
 import illustrationImg from '../assets/images/illustration.svg';
 
 import { database } from '../services/firebase';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { Button } from '../components/Button';
 import { Logo } from '../components/Logo';
@@ -18,10 +21,33 @@ export function NewRoom(){
     const history = useHistory();
     const [ newRoom, setNewRoom] = useState('');
 
+    useEffect(() => {
+        toast.success('Login successfully', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored',
+        });
+    }, [])
+    
     async function handleCreateRoom(event : FormEvent){ 
         event.preventDefault();
-        
+
         if (newRoom.trim() === ''){
+            toast.error('Insert valid values', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+            });
             return;
         }
 
@@ -37,6 +63,18 @@ export function NewRoom(){
 
     return(
         <div id="page-auth">
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
+
             <aside>
                 <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
                 <strong>Crie salas de Q&amp;A ao-vivo</strong>
@@ -51,7 +89,17 @@ export function NewRoom(){
                     </div>
 
                     <Logo width="357" height="155"/>
-                    <h2>Criar uma nova sala</h2>
+                    
+                    <div className="titleBox">
+                        <img
+                            src={user?.avatar}
+                            alt={user?.name}
+                        />
+                        <h2>
+                            Olá <span style={{color:'#E559F9'}}>{user?.name}</span>
+                            , Vamos criar uma nova sala ?
+                        </h2>
+                    </div>
 
                     <form id="form-auth" onSubmit={handleCreateRoom}>
                         <input
@@ -68,9 +116,8 @@ export function NewRoom(){
                         </p>
                     </form>
                 </div>
-
             </main>
-
+        
         </div>
     )
 }

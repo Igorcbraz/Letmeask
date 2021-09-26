@@ -78,10 +78,26 @@ aside p {
     color: var(--pink-dark);
 }
 
-h2{
+/* h2{
     font-size: 24px;
     margin: 64px 0 24px;
     font-family: 'Poppins', sans-serif;
+} */
+.titleBox h2{
+    font-size: 24px;
+    margin: 64px 0 24px;
+    color: var(--logo);
+    font-family: 'Poppins', sans-serif;
+}
+.titleBox img {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+}
+.titleBox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .create-room{

@@ -3,6 +3,7 @@ import { useHistory, useParams } from 'react-router';
 import { Button } from '../components/Button';
 import { Logo } from '../components/Logo';
 import { ToggleTheme } from '../components/ToggleTheme';
+import { Stats } from '../components/Stats';
 import { Question } from '../components/Question';
 
 import { RoomCode } from '../components/RoomCode';
@@ -11,6 +12,7 @@ import { useRoom } from '../hooks/useRoom';
 
 import '../styles/room.css';
 import '../styles/question.css';
+import { useEffect } from 'react';
 
 
 type RoomsParams = {
@@ -23,7 +25,7 @@ export function AdminRoom() {
     const params = useParams<RoomsParams>();
     const roomId = params.id;
 
-    const { title, questions } = useRoom(roomId);
+    const { title, questions} = useRoom(roomId);
 
     async function handleDeleteRoom(){
         await database.ref(`rooms/${roomId}`).update({
@@ -53,6 +55,7 @@ export function AdminRoom() {
 
     return (
         <div id="page-root">
+
             <header>
                 <div className="content">
                     <Logo width="157" height="75"/>
@@ -70,6 +73,12 @@ export function AdminRoom() {
                 <div className="room-title">
                     <h1>Sala {title}</h1>
                     { questions.length > 0 && <span>{questions.length} pergunta(s)</span> }
+                </div>
+
+                <div className="all-stats">
+                    <Stats text="Perguntas:" numQuestions={questions.length} color="var(--purple)"/>
+                    <Stats text="Likes:" numLikes={questions[0].likeCount} color="var(--pink-dark)"/>
+                    {/* questions[0].likeCount */}
                 </div>
                 
                 <div className="question-list">
