@@ -12,7 +12,6 @@ import { useRoom } from '../hooks/useRoom';
 
 import '../styles/room.css';
 import '../styles/question.css';
-import { useEffect } from 'react';
 
 
 type RoomsParams = {
@@ -53,6 +52,25 @@ export function AdminRoom() {
         });
     }
 
+    function getAllLikes(){
+        const allLikeQuestions = questions.reduce((somaLikes, question) => {
+            return somaLikes + question.likeCount;
+        }, 0)
+
+        return allLikeQuestions;
+    }
+
+    function getAllAnsweredQuestions(){            
+        const allAnsweredQuestions = questions.reduce((somaAnswered, question) => {
+            if(question.isAnswered){
+                somaAnswered++;
+            }
+            return somaAnswered;
+        }, 0)
+
+        return allAnsweredQuestions;
+    }
+
     return (
         <div id="page-root">
 
@@ -76,9 +94,8 @@ export function AdminRoom() {
                 </div>
 
                 <div className="all-stats">
-                    <Stats text="Perguntas:" numQuestions={questions.length} color="var(--purple)"/>
-                    <Stats text="Likes:" numLikes={questions[0].likeCount} color="var(--pink-dark)"/>
-                    {/* questions[0].likeCount */}
+                    <Stats text="Respondida(s):" numAnswered={getAllAnsweredQuestions()} color="var(--purple)"/>
+                    <Stats text="Likes:" numLikes={getAllLikes()} color="var(--pink-dark)"/>
                 </div>
                 
                 <div className="question-list">

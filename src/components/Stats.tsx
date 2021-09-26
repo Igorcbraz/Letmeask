@@ -1,15 +1,15 @@
 import '../styles/stats.css';
 
 type QuestionsType = {
-    numQuestions?: number | undefined;
+    numAnswered?: number | undefined;
     numLikes?: number | undefined;
     text: string;
     color?: string | undefined;
 }
 
 export function Stats( {
-    numQuestions, 
-    numLikes,
+    numAnswered = 0, 
+    numLikes = 0,
     text,
     color,
 }: QuestionsType){
@@ -21,7 +21,7 @@ export function Stats( {
                 color: `${color}`,
             }}
         >
-            <h3>{text} {numQuestions ? numQuestions : numLikes} </h3>
+            <h3>{text} {numAnswered ? numAnswered : numLikes} </h3>
         </div>
     );
 }

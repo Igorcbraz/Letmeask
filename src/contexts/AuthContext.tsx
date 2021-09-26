@@ -29,7 +29,7 @@ export function AuthContextProvider(props : AuthContextProvider){
           if (!displayName || !photoURL){
             throw new Error('Missing information from Google Account.');
           }
-  
+
           setUser({
             id: uid,
             name: displayName,

@@ -14,6 +14,7 @@ import { database } from '../services/firebase';
 import { useRoom } from '../hooks/useRoom';
 
 import '../styles/room.css';
+import { Stats } from '../components/Stats';
 
 type RoomsParams = {
     id: string;
@@ -64,6 +65,25 @@ export function Room() {
         }
     }
 
+    function getAllLikes(){
+        const allLikeQuestions = questions.reduce((somaLikes, question) => {
+            return somaLikes + question.likeCount;
+        }, 0)
+
+        return allLikeQuestions;
+    }
+
+    function getAllAnsweredQuestions(){            
+        const allAnsweredQuestions = questions.reduce((somaAnswered, question) => {
+            if(question.isAnswered){
+                somaAnswered++;
+            }
+            return somaAnswered;
+        }, 0)
+
+        return allAnsweredQuestions;
+    }
+
     return (
         <div id="page-root">
             <header>
@@ -80,6 +100,11 @@ export function Room() {
                 <div className="room-title">
                     <h1>Sala {title}</h1>
                     { questions.length > 0 && <span>{questions.length} pergunta(s)</span> }
+                </div>
+
+                <div className="all-stats">
+                    <Stats text="Respondida(s):" numAnswered={getAllAnsweredQuestions()} color="var(--purple)"/>
+                    <Stats text="Likes:" numLikes={getAllLikes()} color="var(--pink-dark)"/>
                 </div>
                 
                 <form onSubmit={handleSendQuestion}>
