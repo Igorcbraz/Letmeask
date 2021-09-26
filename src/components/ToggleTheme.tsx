@@ -2,6 +2,7 @@ import {useState} from "react";
 import Switch from "react-switch";
 
 import '../styles/toggle.css';
+import 'material-design-icons/iconfont/material-icons.css';
 
 export function ToggleTheme(){
     // Checking the user themes preference
@@ -31,7 +32,7 @@ export function ToggleTheme(){
             root.setProperty('--border'      , '#e2e2e2');
             root.setProperty('--like'        , '#835AFD');
             root.setProperty('--highlighted' , '#E3D8FF');
-            root.setProperty('--logo'       , '#222222');
+            root.setProperty('--logo'        , '#222222');
             root.setProperty('--purple'      , '#835AFD');
             root.setProperty('--pink-dark'   , '#E559F9');
         },
@@ -58,13 +59,31 @@ export function ToggleTheme(){
     }
 
     return(
-        <Switch
-            onChange={changeTheme}
-            checked={darkMode === 'dark'}
-            checkedIcon={!darkMode}
-            uncheckedIcon={!darkMode}
-            offColor="#E559F9"
-            onColor="#2F2450"
-        />
+        <button className="toggleTheme" onClick={changeTheme}>
+            <span 
+                className="material-icons svgTheme"
+            >
+                {darkMode === 'light' ? 
+                <span>&#xe518;</span> : 
+                <span>&#xf03d;</span>}
+            </span>
+        </button>
+        // <Switch
+        //     onChange={changeTheme}
+        //     checked={darkMode === 'dark'}
+        //     checkedIcon={!darkMode}
+        //     uncheckedIcon={!darkMode}
+        //     handleDiameter={30}
+        //     offHandleColor="#E559F9"
+        //     onHandleColor="#2F2450"
+        //     offColor={darkMode ? '#F4F0FF' : '#202124'}
+        //     onColor={darkMode ? '#202124' : '#F4F0FF'}
+        //     uncheckedHandleIcon={
+        //         <span className="material-icons svgTheme">&#xe518;</span>
+        //     }            
+        //     checkedHandleIcon={
+        //         <span className="material-icons svgTheme">&#xf03d;</span>
+        //     }
+        // />
     );
 }

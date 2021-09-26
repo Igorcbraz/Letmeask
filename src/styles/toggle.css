@@ -5,3 +5,28 @@
     top: 3rem;
     padding: 0.5rem;
 }
+
+.toggleTheme{
+    height: 40px;
+    border-radius: 8px;
+    font-weight: 500;
+    background-color: var(--purple) !important;
+    color: var(--white);
+    padding: 0 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    border: 0;
+
+    transition: filter 0.2s;
+}
+.toggleTheme:hover{
+    filter: brightness(0.9);
+}
+
+.svgTheme{
+    transition: 2s;
+}
