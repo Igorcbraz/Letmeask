@@ -33,6 +33,16 @@ export function Home(){
         event.preventDefault();
 
         if(roomCode.trim() === ''){
+            toast.error('Insert valid values', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+            });
             return;
         }
 
@@ -67,6 +77,14 @@ export function Home(){
         }
 
         history.push(`/rooms/${roomCode}`);
+    }
+
+    async function handleDiscoverRooms(){
+        if(!user){
+            await signInWithGoogle();
+        }
+
+        //history.push(`/rooms/discover`);
     }
 
     return(
@@ -116,6 +134,10 @@ export function Home(){
                             Entrar na sala
                         </Button>
                     </form>
+
+                    <Button onClick={handleDiscoverRooms} isOutlined style={{marginTop: 10}}>
+                            Descobrir novas salas
+                    </Button>
                 </div>
             </main>
 

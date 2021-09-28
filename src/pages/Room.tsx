@@ -129,7 +129,7 @@ export function Room() {
                 </form>
                 
                 <div className="question-list">
-                    { questions.length < 0 && (
+                    { questions.length <= 0 && (
                         <footer className="emptyQuestions">
                             <img src={emptyQuestions} alt="Ilustração para sala sem perguntas" />
                             <div>

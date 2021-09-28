@@ -19,8 +19,8 @@
     margin-right: 8px;
 }
 .outlined {
-    background: var(--white);
-    border: 1px solid var(--purple);
+    background: transparent;
+    border: 2px solid var(--purple);
     color: var(--purple);
     transition: 0.3s;
 }
