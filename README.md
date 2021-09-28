@@ -28,7 +28,9 @@ Este é um projeto desenvolvido durante a **[Next Level Week Together](https://n
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 - [ ] Responsividade
-- [ ] Tema Dark (usando prefer-color-scheme)
+- [x] Tema Dark (usando prefer-color-scheme)
+- [x] Melhorar exposição dos dados das perguntas
+- [ ] Mostrar todas as salas criadas
 - [ ] Versão Mobile (React Native)
 - [ ] Styled Components
 
