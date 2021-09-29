@@ -7,14 +7,11 @@ import { useRooms } from '../hooks/useRooms';
 
 import '../styles/discoverRoom.css';
 
-type RoomsParams = {
-    id: string;
-}
-
 export function DiscoverRooms() {
     const {rooms} = useRooms();
-    console.log(rooms)
 
+    const roomsOpen = rooms.filter(room => !room.endedAt);
+    
     return (
         <div id="page-root">
             <header>
@@ -25,23 +22,27 @@ export function DiscoverRooms() {
                     </div>
                 </div>
             </header>
-
+            
             <main>
                 <div className="title">
                     <h1>Todas as Salas</h1>
-                    <span>num salas</span>
+                    {rooms.length > 0 ? (
+                        <span>{rooms.length} sala(s)</span>
+                    ) : (
+                        <span>Nenhuma Sala</span>
+                    )}
                 </div>
 
                 <div className="all-stats">
-                    <Stats text="Abertas"  numAnswered={0} borderColor="var(--purple)"/>
-                    <Stats text="Fechadas" numLikes={0}    borderColor="var(--pink-dark)"/>
+                    <Stats text="Abertas"  firstStats={roomsOpen.length} borderColor="var(--purple)"/>
+                    <Stats text="Fechadas" secondStats={rooms.length - roomsOpen.length}  borderColor="var(--pink-dark)"/>
                 </div>
                 
                 
                 <div className="rooms-list">
                     {rooms.map(room => {
                         return(
-                            <Rooms text={room.name}  roomId={room.id}/>       
+                            <Rooms text={room.name}  roomId={room.id} isEnded={room.endedAt ? true : false}/>       
                         );
                     })}
                 </div>

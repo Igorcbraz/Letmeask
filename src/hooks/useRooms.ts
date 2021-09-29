@@ -17,22 +17,23 @@ export function useRooms(){
     const [rooms, setRooms] = useState<RoomType[]>([]);
 
     useEffect(() => {
-        const roomRef = database.ref(`rooms/`);
+        const roomsRef = database.ref(`rooms/`);
 
-        roomRef.on('value', room => {
+        roomsRef.on('value', room => {
             const databaseRooms = room.val();
-            const fireBaseRooms: FirebaseRooms = databaseRooms ?? {};
-            const parsedRooms = Object.entries(fireBaseRooms).map(([key, value]) => {
+            const rooms: FirebaseRooms = databaseRooms ?? {};
+            const parsedRooms = Object.entries(rooms).map(([key, value]:any) => {
                 return{
                     id: key,
                     name: value.title,
-                    endedAt: value?.endeAt,
-                }});
+                    endedAt: value?.endedAt,
+                }
+            });
             setRooms(parsedRooms);
-        })
+        }, function(error){console.log(error)}) // If have an error in query, this functions going show what is
 
         return () => {
-            roomRef.off('value');
+            roomsRef.off('value');
         }
     }, [])
 

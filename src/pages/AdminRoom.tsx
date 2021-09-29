@@ -94,8 +94,8 @@ export function AdminRoom() {
                 </div>
 
                 <div className="all-stats">
-                    <Stats text="Respondida(s):" numAnswered={getAllAnsweredQuestions()} borderColor="var(--purple)"/>
-                    <Stats text="Likes:" numLikes={getAllLikes()} borderColor="var(--pink-dark)"/>
+                    <Stats text="Respondida(s)" firstStats={getAllAnsweredQuestions()} borderColor="var(--purple)"/>
+                    <Stats text="Likes" secondStats={getAllLikes()} borderColor="var(--pink-dark)"/>
                 </div>
                 
                 <div className="question-list">

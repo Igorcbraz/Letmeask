@@ -1,8 +1,8 @@
 import '../styles/stats.css';
 
 type QuestionsType = {
-    numAnswered?: number | undefined;
-    numLikes?: number | undefined;
+    firstStats?: number | undefined;
+    secondStats?: number | undefined;
     text: string;
     borderColor?: string | undefined;
     textColor?: string | undefined;
@@ -10,8 +10,8 @@ type QuestionsType = {
 }
 
 export function Stats( {
-    numAnswered = 0, 
-    numLikes    = 0,
+    firstStats  = 0, 
+    secondStats = 0,
     text,
     borderColor,
     textColor   = borderColor,
@@ -26,7 +26,7 @@ export function Stats( {
                 backgroundColor: `${bgcolor}`,
             }}
         >
-            <h3>{text} {numAnswered ? numAnswered : numLikes} </h3>
+            <h3>{firstStats ? firstStats : secondStats} {text} </h3>
         </div>
     );
 }

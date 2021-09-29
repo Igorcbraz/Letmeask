@@ -12,8 +12,7 @@
     transition: 0.3s;
 }
 .room-code:hover{
-    background: var(--purple);
-    border: 1px solid var(--purple);
+    filter: brightness(0.8);
 }
 .room-code div {
     display: flex;
@@ -31,6 +30,41 @@
     flex: 1;
     padding: 0 16px 0 12px;
     color: var(--logo);
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+
+.closed-room{
+    height: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+
+    background: var(--danger);
+    border: 1px solid var(--danger);
+
+    display: flex;
+
+    transition: 0.3s;
+}
+.closed-room div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.closed-room div img{
+    background: var(--danger);
+    height: 41px;
+    padding: 7px 13px;
+    float: left;
+}
+.closed-room div span {
+    align-self: center;
+    flex: 1;
+    padding: 0 16px 0 12px;
+    color: var(--white);
     width: 100%;
     font-size: 14px;
     font-weight: 500;

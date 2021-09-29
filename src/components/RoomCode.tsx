@@ -1,4 +1,5 @@
 import copyImg from '../assets/images/copy.svg'
+import highlightOff from '../assets/images/highlight-off.svg'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -8,11 +9,16 @@ import '../styles/room-code.css';
 type RoomCodeProps = {
     code: string;
     text?: string | undefined;
+    isEnded?: boolean;
 }
 
-export function RoomCode(props: RoomCodeProps) {
+export function RoomCode({
+    code,
+    text,
+    isEnded = false,
+}: RoomCodeProps) {
     function copyRoomCodeToClipBoard(){
-        navigator.clipboard.writeText(props.code);
+        navigator.clipboard.writeText(code);
 
         toast.success('Copied to clipboard', {
             position: "top-center",
@@ -27,13 +33,18 @@ export function RoomCode(props: RoomCodeProps) {
     }
 
     return(
-        <button className="room-code" onClick={copyRoomCodeToClipBoard}>
+        <button className={!isEnded ? "room-code" : "closed-room"} onClick={!isEnded ? copyRoomCodeToClipBoard : () => {}}>
             <div>
-                <img src={copyImg} alt="Copy room code"/>
-                {!props.text ? (
-                    <span>Sala #{props.code}</span>
+                {!isEnded ? (
+                    <img src={copyImg} alt="Copy room code"/>
                 ) : (
-                    <span>{props.text}</span>
+                    <img src={highlightOff} alt="Sala encerrada"/>
+                )}
+                
+                {!text ? (
+                    <span>Sala #{code}</span>
+                ) : (
+                    <span>{text}</span>
                 )}
                 
             </div>

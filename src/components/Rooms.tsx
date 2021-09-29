@@ -1,21 +1,35 @@
 import { RoomCode } from "../components/RoomCode";
 
+import 'material-design-icons/iconfont/material-icons.css';
 import "../styles/rooms.css"
-
-type RoomsParams = {
-    id: string;
-}
 
 type propsType = {
     roomId: string;
     text: string;
+    isPrivate?: boolean | undefined;
+    isEnded?: boolean | undefined;
 }
 
-export function Rooms(props : propsType) {
+export function Rooms( {
+    roomId,
+    text,
+    isPrivate = false,
+    isEnded = false,
+}: propsType) {
     return (
         <div className="Rooms">
-            <h2>{props.text}</h2>
-            <RoomCode text="Copiar Código" code={props.roomId}/>    
+            <h2>{text}</h2>
+            <div>
+                {!isEnded ?(
+                    <RoomCode text="Copiar Código" code={roomId}/>
+                ) : (
+                    <RoomCode text="Sala Encerrada" isEnded code="#"/>
+                )}
+                
+                <span className="material-icons pulbicOrPrivate">
+                    {isPrivate ? <span>&#xe897;</span> : <span>&#xe80b;</span>}
+                </span>
+            </div>
         </div>
     );
 }
