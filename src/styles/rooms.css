@@ -1,0 +1,20 @@
+.Rooms{
+    background-color: var(--details);
+    width: 100%;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    border-radius: 5px;
+    box-shadow: 0 2px 12px var(--shadow);
+}
+.Rooms h2 {
+    color: var(--logo);
+    font-size: 25px;
+    font-weight: 500;
+
+    margin-bottom: 25px;
+}

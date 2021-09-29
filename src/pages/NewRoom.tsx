@@ -17,7 +17,7 @@ import '../styles/auth.css';
 
 
 export function NewRoom(){
-    const { user } = useAuth();
+    const { user, signInWithGoogle } = useAuth();
     const history = useHistory();
     const [ newRoom, setNewRoom] = useState('');
 
@@ -59,6 +59,14 @@ export function NewRoom(){
         });
 
         history.push(`/admin/rooms/${firebaseRoom.key}`);
+    }
+
+    async function handleDiscoverRooms(){
+        if(!user){
+            await signInWithGoogle();
+        }
+
+        history.push(`/rooms/discover`);
     }
 
     return(
@@ -111,9 +119,13 @@ export function NewRoom(){
                         <Button type="submit">
                             Criar sala
                         </Button>
+                        <Button onClick={handleDiscoverRooms} isOutlined style={{marginTop: 10}}>
+                            Descobrir novas salas
+                        </Button>
                         <p>
                         Quer entrar em uma sala existente ? <Link to="/">Clique aqui</Link>
                         </p>
+                        
                     </form>
                 </div>
             </main>

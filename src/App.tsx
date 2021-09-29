@@ -4,7 +4,7 @@ import { Home } from './pages/Home';
 import { NewRoom } from './pages/NewRoom';
 import { Room } from './pages/Room';
 import { AdminRoom } from './pages/AdminRoom';
-//import { DiscoverRooms } from './pages/DiscoverRooms';
+import { DiscoverRooms } from './pages/DiscoverRooms';
 
 import { AuthContextProvider } from './contexts/AuthContext'
 
@@ -14,7 +14,7 @@ function App() {
      <AuthContextProvider>
         <Switch>
           <Route path="/" exact component={Home} />
-          {/* <Route path="/rooms/discover" exact component={DiscoverRooms} /> */}
+          <Route path="/rooms/discover" exact component={DiscoverRooms} />
           <Route path="/rooms/new" component={NewRoom} />
           <Route path="/rooms/:id" component={Room} />
 

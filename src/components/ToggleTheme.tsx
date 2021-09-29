@@ -24,11 +24,11 @@ export function ToggleTheme(){
         setDarkMode(darkMode === 'light' ? 'dark' : 'light')
 
         toast.success('Tema alterado com sucesso', {
-            position: "top-left",
+            position: "top-center",
             autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
-            pauseOnHover: true,
+            pauseOnHover: false,
             draggable: true,
             progress: undefined,
             theme: 'colored',
@@ -83,7 +83,6 @@ export function ToggleTheme(){
                 rtl={false}
                 pauseOnFocusLoss
                 draggable
-                pauseOnHover
             />
             <button className="toggleTheme" onClick={changeTheme}>
                 <span 

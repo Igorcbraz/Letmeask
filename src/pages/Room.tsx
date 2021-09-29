@@ -103,8 +103,8 @@ export function Room() {
                 </div>
 
                 <div className="all-stats">
-                    <Stats text="Respondida(s):" numAnswered={getAllAnsweredQuestions()} color="var(--purple)"/>
-                    <Stats text="Likes:" numLikes={getAllLikes()} color="var(--pink-dark)"/>
+                    <Stats text="Respondida(s):" numAnswered={getAllAnsweredQuestions()} borderColor="var(--purple)"/>
+                    <Stats text="Likes:" numLikes={getAllLikes()} borderColor="var(--pink-dark)"/>
                 </div>
                 
                 <form onSubmit={handleSendQuestion}>

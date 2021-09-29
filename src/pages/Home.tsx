@@ -84,7 +84,7 @@ export function Home(){
             await signInWithGoogle();
         }
 
-        //history.push(`/rooms/discover`);
+        history.push(`/rooms/discover`);
     }
 
     return(

@@ -4,21 +4,26 @@ type QuestionsType = {
     numAnswered?: number | undefined;
     numLikes?: number | undefined;
     text: string;
-    color?: string | undefined;
+    borderColor?: string | undefined;
+    textColor?: string | undefined;
+    bgcolor?: string | undefined;
 }
 
 export function Stats( {
     numAnswered = 0, 
-    numLikes = 0,
+    numLikes    = 0,
     text,
-    color,
+    borderColor,
+    textColor   = borderColor,
+    bgcolor     = "transparent",
 }: QuestionsType){
     return(
         <div 
             className="room-stats" 
             style={{
-                borderColor: `${color}`,
-                color: `${color}`,
+                borderColor: `${borderColor}`,
+                color: `${textColor}`,
+                backgroundColor: `${bgcolor}`,
             }}
         >
             <h3>{text} {numAnswered ? numAnswered : numLikes} </h3>
