@@ -22,7 +22,7 @@ export function NewRoom(){
     const [ newRoom, setNewRoom] = useState('');
 
     useEffect(() => {
-        toast.success('Login successfully', {
+        toast.success('Login realizado com sucesso', {
             position: "top-center",
             autoClose: 5000,
             hideProgressBar: false,
@@ -38,7 +38,7 @@ export function NewRoom(){
         event.preventDefault();
 
         if (newRoom.trim() === ''){
-            toast.error('Insert valid values', {
+            toast.error('Insira valores válidos', {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,

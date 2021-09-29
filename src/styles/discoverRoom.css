@@ -22,6 +22,7 @@ main {
 }
 .title{
     margin: 32px 0 24px;
+
     display: flex;
     align-items: center;
 }
@@ -32,13 +33,18 @@ main {
     text-align: left;
 }
 .title span{
-    margin-left: 16px;
     background: var(--pink-dark);
     border-radius: 9999px;
-    padding: 8px 16px;
+
     color: var(--white);
     font-weight: 500;
     font-size: 14px;
+
+    margin-left: 16px;
+    padding: 8px 16px;
+}
+.new-room{
+    width: 30%;
 }
 
 .rooms-list{
@@ -46,11 +52,8 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 20px;
 
-
     align-items: center;
     justify-content: space-between;
 }
-
-
 .rooms-list{margin-top: 32px;}
 .rooms-list p{color: var(--dark-grey)}

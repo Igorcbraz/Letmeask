@@ -111,4 +111,4 @@ form textarea{
     align-items: center;
 }
 .emptyQuestions h2,p{margin: 0}
-.question-list p{color: var(--dark-grey)}
+.question-list p{color: var(--dark-grey); margin-bottom: 40px;}

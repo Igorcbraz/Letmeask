@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import '../styles/toggle.css';
@@ -22,12 +22,12 @@ export function ToggleTheme(){
     const changeTheme = () => {
         setDarkMode(darkMode === 'light' ? 'dark' : 'light')
 
-        toast.success('Tema alterado com sucesso', {
+        toast.success(`Tema alterado para ${darkMode}`, {
             position: "top-center",
-            autoClose: 3000,
+            autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
-            pauseOnHover: false,
+            pauseOnHover: true,
             draggable: true,
             progress: undefined,
             theme: 'colored',
@@ -72,26 +72,14 @@ export function ToggleTheme(){
     }
 
     return(
-        <>
-            <ToastContainer
-                position="top-left"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-            />
-            <button className="toggleTheme" onClick={changeTheme}>
-                <span 
-                    className="material-icons svgTheme"
-                >
-                    {darkMode === 'light' ? 
-                    <span>&#xe518;</span> : 
-                    <span>&#xf03d;</span>}
-                </span>
-            </button>
-        </>
+        <button className="toggleTheme" onClick={changeTheme}>
+            <span 
+                className="material-icons svgTheme"
+            >
+                {darkMode === 'light' ? 
+                <span>&#xe518;</span> : 
+                <span>&#xf03d;</span>}
+            </span>
+        </button>
     );
 }

@@ -33,7 +33,7 @@ export function Home(){
         event.preventDefault();
 
         if(roomCode.trim() === ''){
-            toast.error('Insert valid values', {
+            toast.error('Insira valores válidos', {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -49,7 +49,7 @@ export function Home(){
         const roomRef = await database.ref(`rooms/${roomCode}`).get();
 
         if (!roomRef.exists()){
-            toast.error('Room does not exists', {
+            toast.error('Sala inexistente', {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -63,7 +63,7 @@ export function Home(){
         }
 
         if(roomRef.val().endedAt){
-            toast.error('Room already closed', {
+            toast.error('A Sala já foi encerrada', {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -89,18 +89,6 @@ export function Home(){
 
     return(
         <div id="page-auth">
-            <ToastContainer
-                position="top-center"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-            />
-
             <aside>
                 <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
                 <strong>Crie salas de Q&amp;A ao-vivo</strong>
@@ -141,6 +129,17 @@ export function Home(){
                 </div>
             </main>
 
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </div>
     )
 }

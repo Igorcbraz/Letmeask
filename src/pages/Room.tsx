@@ -8,6 +8,8 @@ import { Logo } from '../components/Logo';
 import { ToggleTheme } from '../components/ToggleTheme';
 import { Question } from '../components/Question';
 
+import { ToastContainer} from 'react-toastify';
+
 import { RoomCode } from '../components/RoomCode';
 import { useAuth } from '../hooks/useAuth';
 import { database } from '../services/firebase';
@@ -86,6 +88,7 @@ export function Room() {
 
     return (
         <div id="page-root">
+
             <header>
                 <div className="content">
                     <Logo width="157" height="75"/>
@@ -134,7 +137,11 @@ export function Room() {
                             <img src={emptyQuestions} alt="Ilustração para sala sem perguntas" />
                             <div>
                                 <h2>Nenhuma pergunta por aqui...</h2>
-                                <p>Faça o seu login e seja a primeira pessoa a fazer uma pergunta!</p>
+                                { !user ? (
+                                    <p>Faça o seu login e seja a primeira pessoa a fazer uma pergunta!</p>
+                                ) : (
+                                    <p>Seja a primeira pessoa a fazer uma pergunta!</p>
+                                )}
                             </div>
                         </footer>
                     )}
@@ -167,7 +174,17 @@ export function Room() {
                 </div>
             </main>
 
-            
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </div>
     );
 }

@@ -41,6 +41,22 @@
     --pink-dark    : #a075d4; */
 }
 
+/* Seleção */
+::selection{
+    background-color: var(--purple);
+    color: #FFF;
+}
+
+/* Scrol */
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: #4c319e;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--pink-dark);
+    border-radius: 2px;
+}
+
 *{
     margin: 0;
     padding: 0;
