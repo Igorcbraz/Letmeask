@@ -7,6 +7,7 @@ import { Button } from '../components/Button';
 import { Logo } from '../components/Logo';
 import { ToggleTheme } from '../components/ToggleTheme';
 import { Question } from '../components/Question';
+import { Stats } from '../components/Stats';
 
 import { ToastContainer} from 'react-toastify';
 
@@ -16,7 +17,6 @@ import { database } from '../services/firebase';
 import { useRoom } from '../hooks/useRoom';
 
 import '../styles/room.css';
-import { Stats } from '../components/Stats';
 
 type RoomsParams = {
     id: string;

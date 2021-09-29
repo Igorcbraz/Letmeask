@@ -12,7 +12,7 @@
     transition: 0.3s;
 }
 .room-code:hover{
-    filter: brightness(0.8);
+    filter: brightness(0.9);
 }
 .room-code div {
     display: flex;
