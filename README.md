@@ -30,9 +30,8 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [ ] Responsividade
 - [x] Tema Dark (usando prefer-color-scheme)
 - [x] Melhorar exposição dos dados das perguntas
-- [ ] Mostrar todas as salas criadas
+- [x] Mostrar todas as salas criadas
 - [ ] Versão Mobile (React Native)
-- [ ] Styled Components
 
 ## 🤝 Colaboradores
 
