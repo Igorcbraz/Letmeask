@@ -15,7 +15,7 @@ header{
     gap: 16px;
     color: var(--details2);
 }
-.content button{height: 40px; background-color: var(--details);}
+/* .content button{height: 40px; background-color: var(--details);} */
 .content img{ max-height: 45px;}
 
 main {
