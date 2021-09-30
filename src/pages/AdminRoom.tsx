@@ -24,7 +24,8 @@ type RoomsParams = {
 }
 
 export function AdminRoom() {
-    const [modalIsOpen, setIsOpen] = useState(false);
+    const [modalDeleteIsOpen, setDeleteIsOpen] = useState(false);
+    const [modalRoomOffIsOpen, setRoomOffIsOpen] = useState(false);
     const history = useHistory();
     const params = useParams<RoomsParams>();
     const roomId = params.id;
@@ -42,7 +43,7 @@ export function AdminRoom() {
     async function handleDeleteQuestion(questionId: string){
         await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
 
-        setIsOpen(false);
+        setDeleteIsOpen(false);
     }
 
     async function handleCheckQuestionAsAnswered(questionId: string){
@@ -75,10 +76,6 @@ export function AdminRoom() {
         return allAnsweredQuestions;
     }
 
-    function closeModal(){
-        setIsOpen(false);
-    }
-
     return (
         <div id="page-root">
 
@@ -88,7 +85,7 @@ export function AdminRoom() {
                     <div>
                     <RoomCode code={roomId} />
                     <Button isOutlined
-                        onClick={handleDeleteRoom}
+                        onClick={() => setRoomOffIsOpen(true)}
                     >Encerrar Sala</Button>
                     <ToggleTheme/>
                     </div>
@@ -142,7 +139,7 @@ export function AdminRoom() {
                                     )}
                                     <button
                                         type="button"
-                                        onClick={() => setIsOpen(true)}    
+                                        onClick={() => setDeleteIsOpen(true)}    
                                     >
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M3 5.99988H5H21" stroke="#737380" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -153,14 +150,23 @@ export function AdminRoom() {
                                 </Question>
 
                                 <Modal
-                                    isOpen={modalIsOpen}
+                                    isOpen={modalDeleteIsOpen}
+                                    aria={{
+                                        labelledby: "heading",
+                                        describedby: "full_description"
+                                      }}
+                                    id="modalDelete"
                                 >
-                                    <div>
+                                    <div className="modalDeleteItems">
                                         <img src={Delete} alt="ícone deletar pergunta" />
+
                                         <h1>Excluir Pergunta</h1>
                                         <p>Tem certeza que você deseja excluir esta pergunta?</p>
-                                        <button onClick={closeModal}>Voltar</button>
-                                        <button onClick={ () => handleDeleteQuestion(question.id)}>Sim, excluir</button>
+
+                                        <div>
+                                            <button id="buttonClose" onClick={() => setDeleteIsOpen(false)}>Voltar</button>
+                                            <button id="buttonDelete" onClick={ () => handleDeleteQuestion(question.id)}>Sim, excluir</button>
+                                        </div>
                                     </div>
                                 </Modal>
                             </>
@@ -168,6 +174,30 @@ export function AdminRoom() {
                     })}
                 </div>
             </main>
+
+            <Modal
+                isOpen={modalRoomOffIsOpen}
+                aria={{
+                    labelledby: "heading",
+                    describedby: "full_description"
+                    }}
+                id="modalDelete"
+            >
+                <div className="modalDeleteItems">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24" width="48px" fill="var(--danger)">
+                        <path d="M0 0h24v24H0V0z" fill="none"/>
+                        <path d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                    </svg>
+
+                    <h1>Encerrar sala</h1>
+                    <p>Tem certeza que você deseja encerrar esta sala?</p>
+
+                    <div>
+                        <button id="buttonClose" onClick={() => setRoomOffIsOpen(false)}>Cancelar</button>
+                        <button id="buttonDelete" onClick={handleDeleteRoom}>Sim, encerrar</button>
+                    </div>
+                </div>
+            </Modal>
         </div>
     );
 }

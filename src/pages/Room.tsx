@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import { useParams } from 'react-router';
 
 import emptyQuestions from '../assets/images/empty-questions.svg';
@@ -88,7 +88,7 @@ export function Room() {
 
     return (
         <div id="page-root">
-
+            <nav></nav>
             <header>
                 <div className="content">
                     <Logo width="157" height="75"/>

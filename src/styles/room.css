@@ -112,3 +112,57 @@ form textarea{
 }
 .emptyQuestions h2,p{margin: 0}
 .question-list p{color: var(--dark-grey); margin-bottom: 40px;}
+
+#modalDelete{
+    width: 60vw;
+    margin: 0 auto;
+    border-radius: 15px;
+    background-color: var(--background) !important;
+    border: 1px solid var(--background) !important;
+}
+.ReactModal__Overlay--after-open{
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+.modalDeleteItems{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+.modalDeleteItems div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1.5rem;
+}
+.modalDeleteItems img {
+    width: 48px;
+    height: 48px;
+}
+.modalDeleteItems h1 {
+    color: var(--logo);
+}
+.modalDeleteItems p {
+    color: var(--dark-grey);
+}
+#buttonClose, #buttonDelete{
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+#buttonClose:hover, #buttonDelete:hover{
+    filter: opacity(0.9);
+}
+#buttonClose{
+    background-color: var(--light-grey);
+    border: 1px solid var(--light-grey);
+    color: var(--dark-grey);
+}
+#buttonDelete{
+    background-color: var(--danger);
+    border: 1px solid var(--danger);
+    color: var(--white);
+}
