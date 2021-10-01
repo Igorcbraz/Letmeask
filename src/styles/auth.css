@@ -55,6 +55,29 @@ aside p {
     width: 100%;
 }
 
+#form-auth div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#form-auth div button{
+    background-color: var(--light-grey);
+    color: var(--logo);
+    padding: 8px 0;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#form-auth div button:hover{
+    background-color: var(--purple);
+    transition: 0.3s;
+}
+#form-auth div button:active{
+    background-color: var(--purple);
+}
+#btn1{border-radius: 5px 0 0 5px;}
+#btn2{border-radius: 0 5px 5px 0;}
+
 #form-auth input {
     height: 50px;
     border-radius: 8px;
@@ -78,11 +101,6 @@ aside p {
     color: var(--pink-dark);
 }
 
-/* h2{
-    font-size: 24px;
-    margin: 64px 0 24px;
-    font-family: 'Poppins', sans-serif;
-} */
 .titleBox h2{
     font-size: 24px;
     margin: 64px 0 24px;
@@ -145,4 +163,85 @@ aside p {
     height: 1px;
     background-color: var(--medium-grey);
     margin-left: 16px;
+}
+
+#modalDelete{
+    width: 60vw;
+    margin: 0 auto;
+    border-radius: 15px;
+    background-color: var(--background) !important;
+    border: 1px solid var(--background) !important;
+}
+.ReactModal__Overlay--after-open{
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+.modalDeleteItems{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+.modalDeleteItems div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1.5rem;
+}
+.modalDeleteItems img {
+    width: 48px;
+    height: 48px;
+}
+.modalDeleteItems h1 {
+    color: var(--logo);
+}
+.modalDeleteItems p {
+    color: var(--dark-grey);
+}
+.passwordDiv{
+    width: 33%;
+    height: 6%;
+}
+.modalDeleteItems input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 5px;
+    color: var(--danger);
+    font-weight: 500;
+    background-color: var(--input-bg);
+    border: 1px solid var(--medium-grey);
+}
+#buttonClose, #buttonDelete{
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+#buttonClose:hover, #buttonDelete:hover{
+    filter: opacity(0.9);
+}
+#buttonClose{
+    background-color: var(--light-grey);
+    border: 1px solid var(--light-grey);
+    color: var(--dark-grey);
+}
+#buttonDelete{
+    background-color: var(--danger);
+    border: 1px solid var(--danger);
+    color: var(--white);
+}
+
+.iconVisibility{
+    color: var(--logo);
+    cursor: pointer;
+}
+.iconVisibility:hover{
+    filter: brightness(0.9);
+}
+#visibilityBtn{
+    background-color: transparent;
+    border: none;
+    border-radius: 100%;
 }

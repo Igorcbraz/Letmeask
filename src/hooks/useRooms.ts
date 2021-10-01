@@ -5,12 +5,14 @@ type FirebaseRooms=Record<string,{
     authorId:string,
     title:string,
     endeAt?:string,
+    isPrivate: boolean;
 } >
 
 type RoomType = {
     id: string;
     name: string;
     endedAt?: string;
+    isPrivate: boolean;
 }
 
 export function useRooms(){
@@ -27,6 +29,7 @@ export function useRooms(){
                     id: key,
                     name: value.title,
                     endedAt: value?.endedAt,
+                    isPrivate: value.isPrivate,
                 }
             });
             setRooms(parsedRooms);

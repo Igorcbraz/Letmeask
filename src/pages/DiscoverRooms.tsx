@@ -58,7 +58,7 @@ export function DiscoverRooms() {
                 <div className="rooms-list">
                     {rooms.map(room => {
                         return(
-                            <Rooms text={room.name}  roomId={room.id} isEnded={room.endedAt ? true : false}/>       
+                            <Rooms text={room.name}  roomId={room.id} isEnded={room.endedAt ? true : false} isPrivate={room.isPrivate ? true : false}/>       
                         );
                     })}
                 </div>

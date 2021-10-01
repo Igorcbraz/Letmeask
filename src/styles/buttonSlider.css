@@ -1,0 +1,22 @@
+.buttonSlider div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.buttonSlider div button{
+    background-color: var(--light-grey);
+    color: var(--logo);
+    padding: 8px 0;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.buttonSlider div button:hover{
+    background-color: var(--purple);
+    transition: 0.3s;
+}
+.buttonSlider div button:active{
+    background-color: var(--purple);
+}
+#btn1{border-radius: 5px 0 0 5px;}
+#btn2{border-radius: 0 5px 5px 0;}
