@@ -29,8 +29,11 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 
 - [ ] Responsividade
 - [x] Tema Dark (usando prefer-color-scheme)
+- [x] Criar e entrar em salas privadas com senha
+- [x] Uso de modals para notificação de sucesso e erro
+- [x] Uso de modals para senha de salas privadas, exclusão de perguntas e encerramento de salas
 - [x] Melhorar exposição dos dados das perguntas
-- [x] Mostrar todas as salas criadas
+- [x] Mostrar todas as salas criadas, se são públicas ou não e se foram encerradas ou não
 - [ ] Versão Mobile (React Native)
 
 ## 🤝 Colaboradores
